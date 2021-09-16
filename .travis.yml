@@ -1,0 +1,18 @@
+linguage: python
+dist: xenial
+sudo: true
+
+python:
+  - 3.8
+
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENV=1
+    -
+install:
+  - pip install pipenv
+  - pipenv sync --dev
+
+script:
+  - pipenv run flake8
