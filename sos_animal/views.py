@@ -23,7 +23,13 @@ def submit_login(request):
         user = authenticate(email=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/login/#')
+            return redirect('/')
         else:
             messages.error(request, 'Usúario e a senha inválidos. Favor tentar Novamente.')
     return redirect('/login/')
+
+
+@login_required(login_url='/login/')
+def list_all_pets(request):
+    pet = Pet.objects.filter(active=True)
+    return render(request, 'list.html', {'pet': pet})

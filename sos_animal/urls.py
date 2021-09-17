@@ -8,4 +8,6 @@ urlpatterns = [
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout', views.logout_user),
+    path('', RedirectView.as_view(url='pet/all/')),
+    path('pet/all/', views.list_all_pets),
 ]
