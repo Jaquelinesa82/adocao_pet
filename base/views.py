@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 
-def home(request):
-    return HttpResponse('EM MANUTENÇÃO...')
+def login(request):
+    return render(request, 'base/login.html')
