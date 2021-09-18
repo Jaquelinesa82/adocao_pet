@@ -16,19 +16,19 @@
 {% block content %}
     <div class="container">
             <div class="row">
-<!--                {% for p in pet %}-->
+                {% for p in pet %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="#">
                             <div class="polaroid">
-                                <img src="#" alt="Norway" style="width:100%">
+                                <img src="{{ p.photo.url }}" alt="Norway" style="width:100%">
                                 <div class="container">
-<!--                                    <p>{{ p.city }}</p>-->
+                                    <p>{{ p.city }}</p>
                                 </div>
                             </div>
                         </a>
                         <br>
                     </div>
-<!--                {% endfor %}-->
+                {% endfor %}
             </div>
         </div>  
     </div>  
