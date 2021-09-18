@@ -33,3 +33,8 @@ def submit_login(request):
 def list_all_pets(request):
     pet = Pet.objects.filter(active=True)
     return render(request, 'list.html', {'pet': pet})
+
+
+def list_user_pet(request):
+    pet = Pet.objects.filter(active=True, user=request.user)
+    return render(request, 'list.html', {'pet': pet})

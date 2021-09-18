@@ -10,4 +10,5 @@ urlpatterns = [
     path('logout', views.logout_user),
     path('', RedirectView.as_view(url='pet/all/')),
     path('pet/all/', views.list_all_pets),
+    path('pet/user/', views.list_user_pet),
 ]
