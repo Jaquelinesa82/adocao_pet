@@ -17,8 +17,13 @@
 <body class="d-flex flex-column">
 <div class="sidenav">
     <div class="login-main-text">
-        <h1>ANIMAL PET
-            <h1><h4>Você pode ajudar um animal a encontrar um lar, ou podem ser amigos para sempre!</h4>
+        <h1>ANIMAL PET<h1>
+
+            <h4>Você pode ajudar um animal a encontrar um lar, ou podem ser amigos para sempre!</h4>
+            <h1>.........................................................</h1>
+            <h1 class="entry-title" itemprop="headline">Site em Manutenção</h1>
+            <h1>.........................................................</h1>
+
     </div>
 </div>
 <div class="main">
@@ -35,11 +40,11 @@
                 </div>
                 <div>
                     {% for messages in messages %}
-                        <div class="alert alert-danger">
-                            <strong>Error!</strong> {{ messages }}
-                        </div>
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> {{ messages }}
+                    </div>
                 </div>
-                    {% endfor %}
+                {% endfor %}
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
@@ -122,6 +127,7 @@
             background-color: green !important;
             color: #fff;
         }
+
 
 
 </style>
