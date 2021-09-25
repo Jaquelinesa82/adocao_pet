@@ -7,10 +7,28 @@ from .models import Pet
 from django.contrib.auth import logout
 
 
+def login_user(request):
+    return render(request, 'login.html')
+
+
 @login_required(login_url='/login/')
 def logout_user(request):
     logout(request)
     return redirect('/')
+
+
+@csrf_protect
+def submit_login(request):
+    if request.POST:
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/pet/all/')
+        else:
+            messages.error(request, 'Email/Senha inválidos. Favor tentar novamente.')
+    return redirect('/login/')
 
 
 @login_required(login_url='/login/')
@@ -75,19 +93,7 @@ def delete_pet(request, id):
     return redirect('/')
 
 
-def login_user(request):
-    return render(request, 'login.html')
+@login_required(login_url='/login/')
+def user_cadastrados(request):
 
-
-@csrf_protect
-def submit_login(request):
-    if request.POST:
-        email = request.POST['email']
-        password = request.POST['password']
-        user = authenticate(email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/pet/all/')
-        else:
-            messages.error(request, 'Email/Senha inválidos. Favor tentar novamente.')
-    return redirect('/login/')
+    return render(request, 'user_cad.html')
