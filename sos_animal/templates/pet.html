@@ -39,6 +39,7 @@
                 <p><b>E-mail: </b>{{ pet.email }}</p>
                 {% if request.user == pet.user %}
                     <a href="/pet/register/?id={{ pet.id }}">
+                    <a href="#">
                         <button type="button" class="btn btn-primary">Alterar</button>
                     </a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_confirm">Excluir</button>
