@@ -86,4 +86,4 @@ def pet_delete(request, id):
     pet = Pet.objects.get(id=id)
     if pet.user == request.user:
         pet.delete()
-    redirect('/')
+    return redirect('/')
