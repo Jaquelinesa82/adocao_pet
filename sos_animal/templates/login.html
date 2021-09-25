@@ -11,19 +11,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="#">
-    <title>ANIMAL PET</title>
+    <title>SOS PET</title>
 </head>
 
 <body class="d-flex flex-column">
 <div class="sidenav">
     <div class="login-main-text">
-        <h1>ANIMAL PET<h1>
-
-            <h4>Você pode ajudar um animal a encontrar um lar, ou podem ser amigos para sempre!</h4>
-            <h1>.........................................................</h1>
-            <h1 class="entry-title" itemprop="headline">Site em Manutenção</h1>
-            <h1>.........................................................</h1>
-
+        <h1>Animal PET
+            <h1><h4>Nos ajude a salvar mais Pets!</h4>
     </div>
 </div>
 <div class="main">
@@ -31,20 +26,18 @@
         <div class="login-form">
             <form action="submit" method="POST">{% csrf_token %}
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>Usuário</label>
                     <input type="text" class="form-control" placeholder="Email" name="email">
                 </div>
                 <div class="form-group">
                     <label>Senha</label>
                     <input type="password" class="form-control" placeholder="Senha" name="password">
                 </div>
-                <div>
-                    {% for messages in messages %}
-                    <div class="alert alert-danger">
-                        <strong>Error!</strong> {{ messages }}
-                    </div>
-                </div>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger">{{ message }}</div>
                 {% endfor %}
+                {% endif %}
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
@@ -127,7 +120,6 @@
             background-color: green !important;
             color: #fff;
         }
-
 
 
 </style>
