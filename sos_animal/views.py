@@ -26,7 +26,7 @@ def register_submit(request):
         pet = Pet.objects.get(id=pet_id)
         if user == pet.user:
             pet.email = email
-            pet.phone = phone
+            pet.phone = file
             pet.city = city
             pet.description = description
             if file:
