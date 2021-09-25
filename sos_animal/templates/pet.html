@@ -14,7 +14,7 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body text-right">
-            <a href="#">
+            <a href="/pet/delete/{{ pet.id }}/">
                 <button type="button" class="btn btn-danger">EXCLUIR</button>
             </a>
             <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
@@ -38,6 +38,7 @@
                 <p><b>Tel.: </b>{{ pet.phone }}</p>
                 <p><b>E-mail: </b>{{ pet.email }}</p>
                 {% if request.user == pet.user %}
+                    <a href="/pet/register/?id={{ pet.id }}">
                     <a href="#">
                         <button type="button" class="btn btn-primary">Alterar</button>
                     </a>
