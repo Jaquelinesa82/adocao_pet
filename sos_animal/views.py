@@ -26,7 +26,7 @@ def register_submit(request):
         pet = Pet.objects.get(id=pet_id)
         if user == pet.user:
             pet.email = email
-            pet.phone = file
+            pet.phone = phone
             pet.city = city
             pet.description = description
             if file:
@@ -45,26 +45,26 @@ def register_pet(request):
     if pet_id:
         pet = Pet.objects.get(id=pet_id)
         if pet.user == request.user:
-            return render(request, 'register.html', {'pet':pet})
+            return render(request, 'register.html', {'pet': pet})
     return render(request, 'register.html')
 
 
 @login_required(login_url='/login/')
 def pet_detail(request, id):
     pet = Pet.objects.get(active=True, id=id)
-    return render(request, 'pet.html', {'pet':pet})
+    return render(request, 'pet.html', {'pet': pet})
 
 
 @login_required(login_url='/login/')
 def list_all_pet(request):
     pet = Pet.objects.filter(active=True)
-    return render(request, 'list.html', {'pet':pet})
+    return render(request, 'list.html', {'pet': pet})
 
 
 @login_required(login_url='/login/')
 def list_user_pet(request):
     pet = Pet.objects.filter(active=True, user=request.user)
-    return render(request, 'list.html', {'pet':pet})
+    return render(request, 'list.html', {'pet': pet})
 
 
 @login_required(login_url='/login/')
@@ -89,5 +89,5 @@ def submit_login(request):
             login(request, user)
             return redirect('/pet/all/')
         else:
-            messages.error(request, 'Usuário/Senha inválidos. Favor tentar novamente.')
+            messages.error(request, 'Email/Senha inválidos. Favor tentar novamente.')
     return redirect('/login/')
