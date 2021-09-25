@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="#">
-    <title>SOS PET</title>
+    <title>Animal PET</title>
 </head>
 
 <body class="d-flex flex-column">
@@ -26,12 +27,12 @@
         <div class="login-form">
             <form action="submit" method="POST">{% csrf_token %}
                 <div class="form-group">
-                    <label>Usuário</label>
+                    <label>Email</label>
                     <input type="text" class="form-control" placeholder="Email" name="email">
                 </div>
                 <div class="form-group">
                     <label>Senha</label>
-                    <input type="password" class="form-control" placeholder="Senha" name="password">
+                    <input type="password" class="form-control" placeholder="password" name="password">
                 </div>
                 {% if messages %}
                 {% for message in messages %}
