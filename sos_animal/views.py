@@ -91,9 +91,3 @@ def delete_pet(request, id):
     if pet.user == request.user:
         pet.delete()
     return redirect('/')
-
-
-@login_required(login_url='/login/')
-def user_cadastrados(request):
-
-    return render(request, 'user_cad.html')

@@ -14,6 +14,5 @@ urlpatterns = [
     path('pet/detail/<slug:id>/', views.pet_detail),
     path('pet/register/', views.register_pet),
     path('pet/register/submit', views.register_submit),
-    path('pet/user_cad/', views.user_cadastrados),
     path('pet/delete/<slug:id>/', views.delete_pet),
 ]
