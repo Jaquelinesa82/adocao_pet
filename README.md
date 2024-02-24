@@ -2,14 +2,6 @@
 
 Projeto simula uma plataforma de adoção de pets, onde pessoas podem consultar e cadastrar Pets para adoção.
 
-* Aplicação disponivél: 
-  * email: admin@admin.com
-  * senha: admin
-* Python + Django
-* Hospedado no Heroku
-###  
-
-
   <table style="height: 214px; width: 100%; border-collapse: collapse; margin-left: auto; margin-right: auto;" border="0">
 
 <tbody>
